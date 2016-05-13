@@ -23,7 +23,7 @@ public class SavingThePit {
      
      String playerInfo = playerOne.toString();
      System.out.println(playerInfo);
-        
+     
     }
     
 }
