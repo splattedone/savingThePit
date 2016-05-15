@@ -3,6 +3,7 @@
  */
 package savingthepit;
 
+import cit260.savingThePit.model.Game;
 import cit260.savingThePit.model.Player;
 
 /**
@@ -24,6 +25,13 @@ public class SavingThePit {
      String playerInfo = playerOne.toString();
      System.out.println(playerInfo);
      
+     Game gameSaveOne = new Game();
+     
+     gameSaveOne.setGameName("MattsGame");
+     gameSaveOne.setResumeGame("Save1");
+     
+     String gameInfo = gameSaveOne.toString();
+     System.out.println(gameInfo);
     }
     
 }
