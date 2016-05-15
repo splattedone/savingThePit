@@ -4,7 +4,10 @@
 package savingthepit;
 
 import cit260.savingThePit.model.Game;
+import cit260.savingThePit.model.Location;
+import cit260.savingThePit.model.Map;
 import cit260.savingThePit.model.Player;
+import java.util.HashSet;
 
 /**
  *
@@ -17,21 +20,46 @@ public class SavingThePit {
      */
     public static void main(String[] args) {
      
-     Player playerOne = new Player();   
+    // Player Test
+            Player playerOne = new Player();   
+
+            playerOne.setName("Leslie");
+            playerOne.setBestScore(7.00);
+
+            String playerInfo = playerOne.toString();
+            System.out.println(playerInfo);
+    
+    // Game Test
+            Game gameSaveOne = new Game();
+
+            gameSaveOne.setGameName("MattsGame");
+            gameSaveOne.setResumeGame("Save1");
+
+            String gameInfo = gameSaveOne.toString();
+            System.out.println(gameInfo);
      
-     playerOne.setName("Leslie");
-     playerOne.setBestScore(7.00);
-     
-     String playerInfo = playerOne.toString();
-     System.out.println(playerInfo);
-     
-     Game gameSaveOne = new Game();
-     
-     gameSaveOne.setGameName("MattsGame");
-     gameSaveOne.setResumeGame("Save1");
-     
-     String gameInfo = gameSaveOne.toString();
-     System.out.println(gameInfo);
+    // Location Test 
+            // Note 1: I realized I had planned to name locations after characters, so to keep things simple I plan to just specify for each object. We'll have locationAnne and characterAnne, and the respective format for the other characters and locations. 
+
+            // Note 2: We'll have to come back later to change these values to the character objects once they've been created. I tried to code them now to character Anne and characterAndy but it raised an error.
+
+            Location locationAnne = new Location();
+
+            locationAnne.setLocationName("Anne in the Courtyard");
+            locationAnne.setLocationScene("Scene1");
+            locationAnne.setLocationCharacters("Anne");
+
+            String locationInfo = locationAnne.toString();
+            System.out.println(locationInfo);
+            
+    // Map Test
+            Map mainMap = new Map();
+            
+            mainMap.setLocations("Anne");
+            
+            String mapInfo = mainMap.toString();
+            System.out.println(mapInfo);
+        
     }
     
 }
