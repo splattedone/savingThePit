@@ -62,14 +62,23 @@ public class SavingThePit {
             System.out.println(mapInfo);
     
     // Inventory Item Test
-            InventoryItem item = new Item();
+            InventoryItem itemTest = new InventoryItem();
             
-            item.setName ("Item1");
-            item.setDescription ("description");
+            itemTest.setName ("Item1");
+            itemTest.setDescription ("description");
             
-            String inventoryInfo = item.toString();
+            String inventoryInfo = itemTest.toString();
             System.out.println(inventoryInfo);
-            
+          
+                   /*
+                   *[class name] [variableName] = new "className"()
+                   *
+                   *[variableName].value1("value")
+                   *[variableName].value2("value")
+                   *
+                   * [variable type] [variableName] = [variableName].toString();
+                   * System.out.println([variableName]);
+                   */
     }
     
 }
