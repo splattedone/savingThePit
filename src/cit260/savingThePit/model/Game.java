@@ -17,43 +17,48 @@ public class Game implements Serializable{
     // Class instance variables
     
     // We will likely need to change these when we understand better how the save/load commands will work. I'm a little fuzzy on that at this point. MA 5/14/16
-    private String gameName;
-    private String resumeGame;
-    
+    private String map;
+    private String player;
+
     public Game() {
     }
 
-    public String getGameName() {
-        return gameName;
+    
+    
+    public String getMap() {
+        return map;
     }
 
-    public void setGameName(String gameName) {
-        this.gameName = gameName;
+    public void setMap(String map) {
+        this.map = map;
     }
 
-    public String getResumeGame() {
-        return resumeGame;
+    public String getPlayer() {
+        return player;
     }
 
-    public void setResumeGame(String resumeGame) {
-        this.resumeGame = resumeGame;
+    public void setPlayer(String player) {
+        this.player = player;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.gameName);
-        hash = 67 * hash + Objects.hashCode(this.resumeGame);
+        hash = 59 * hash + Objects.hashCode(this.map);
+        hash = 59 * hash + Objects.hashCode(this.player);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Game{" + "gameName=" + gameName + ", resumeGame=" + resumeGame + '}';
+        return "Game{" + "map=" + map + ", player=" + player + '}';
     }
-    
+
     @Override
     public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
         if (obj == null) {
             return false;
         }
@@ -61,15 +66,13 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
-        if (!Objects.equals(this.gameName, other.gameName)) {
+        if (!Objects.equals(this.map, other.map)) {
             return false;
         }
-        if (!Objects.equals(this.resumeGame, other.resumeGame)) {
+        if (!Objects.equals(this.player, other.player)) {
             return false;
         }
         return true;
     }
-    
-    
-    
+   
 }
