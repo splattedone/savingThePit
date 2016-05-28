@@ -30,14 +30,14 @@ public class UtilitiesControlTest {
         System.out.println("\tTest case #1");
         
         int angle = 15;
-        String expResult = "Nice!";
+        String expResult = "Nice! You hit him right in the ear. He'll feel that for awhile.";
         // You hit him right in the ear. He'll feel that for awhile"
         UtilitiesControl instance = new UtilitiesControl();
         String result = instance.calcTomatoAngleApril(angle);
         assertEquals(expResult, result);
-        
-// TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println(expResult);
+        System.out.println(result);
+
     }
 
     /**
@@ -52,8 +52,7 @@ public class UtilitiesControlTest {
         double expResult = 40000.0;
         double result = instance.calcTablespoonsTom(tonsOfDirt, ounces);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("You don' messed up A-Aron!");
+
     }
     
 }

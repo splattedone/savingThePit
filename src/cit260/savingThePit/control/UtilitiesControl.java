@@ -25,8 +25,7 @@ public class UtilitiesControl {
         
         if (angle > 9 && angle <26){
             @SuppressWarnings("LocalVariableHidesMemberVariable")
-            String response = "Nice!";
-            // You hit him right in the ear. He'll feel that for awhile
+            String response = "Nice! You hit him right in the ear. He'll feel that for awhile.";
             return response;
         }
         
