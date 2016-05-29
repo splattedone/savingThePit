@@ -62,9 +62,16 @@ public class UtilitiesControl {
         return Tbs;
     }
     
-    public int calcWafflesAnne(int make, int howMany){
-        int i = make * howMany;
+    public int calcWafflesAnne(double size, double howMany){
+        //User will be prompted to enter size. Tiny == .25, Med == .5, Large == 1.0, Child Size == 2.0
+        double i = size * howMany;
         int charResponse = 0;
+        
+        if (i == 0) {
+            charResponse = -10;
+            //Response Code -1 : "C'mon! Get Cookin!"
+            return charResponse;
+        }
         
         if (i == 1) {
             charResponse = -1;
@@ -126,8 +133,9 @@ public class UtilitiesControl {
             return -2;
         }
     
-        double volume = (3.142 * (radius * radius)) * height; 
-                
+        double volume = Math.PI * Math.pow(radius, 2)* height; 
+        //This is your original formula. It's not wrong, but I have a feeling it'll come back as missed points somehow. This does the same thing, just in the more [insert air quotes here] proper way.
+        //double volume = (3.142 * (radius * radius)) * height;        
         return volume;
     }    
 }
