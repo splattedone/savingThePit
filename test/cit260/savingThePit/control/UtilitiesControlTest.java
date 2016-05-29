@@ -253,4 +253,122 @@ public class UtilitiesControlTest {
 
     }
     
+    /**
+     * Test of calcAmountOfDirtEthel method, of class UtilitiesControl.
+     */
+    @Test
+    public void testCalcAmountOfDirtEthel() {
+        System.out.println("calcAmountOfDirtEthel");
+        
+        /*******************************
+         * Test Case #1
+         ******************************/
+        
+        System.out.println("\tTest case #1");
+        
+        int height = 15;
+        int radius = 35;
+        int expResult = 57727;
+
+        UtilitiesControl instance = new UtilitiesControl();
+        int result = (int) instance.calcAmountOfDirtEthel(height, radius);
+        assertEquals(expResult, result);
+        System.out.println("\t\tExpected result is: " + expResult);
+        System.out.println("\t\tActual result is: " + result);
+        
+         /*******************************
+         * Test Case #2
+         ******************************/
+        
+        System.out.println("\tTest case #1");
+        
+        height = 9;
+        radius = 24;
+        expResult = -1;
+
+        UtilitiesControl instance = new UtilitiesControl();
+        result = (int) instance.calcAmountOfDirtEthel(height, radius);
+        assertEquals(expResult, result);
+        System.out.println("\t\tExpected result is: " + expResult);
+        System.out.println("\t\tActual result is: " + result);
+        
+        /*******************************
+         * Test Case #3
+         ******************************/
+        
+        System.out.println("\tTest case #1");
+        
+        height = -1;
+        radius = 20;
+        expResult = -1;
+
+        UtilitiesControl instance = new UtilitiesControl();
+        result = (int) instance.calcAmountOfDirtEthel(height, radius);
+        assertEquals(expResult, result);
+        System.out.println("\t\tExpected result is: " + expResult);
+        System.out.println("\t\tActual result is: " + result);
+        
+        /*******************************
+         * Test Case #4
+         ******************************/
+        
+        System.out.println("\tTest case #1");
+        
+        height = 8;
+        radius = -1;
+        expResult = -1;
+
+        UtilitiesControl instance = new UtilitiesControl();
+        result = (int) instance.calcAmountOfDirtEthel(height, radius);
+        assertEquals(expResult, result);
+        System.out.println("\t\tExpected result is: " + expResult);
+        System.out.println("\t\tActual result is: " + result);
+        
+        /*******************************
+         * Test Case #5
+         ******************************/
+        
+        System.out.println("\tTest case #1");
+        
+        height = 10;
+        radius = 30;
+        expResult = 28274;
+
+        UtilitiesControl instance = new UtilitiesControl();
+        result = (int) instance.calcAmountOfDirtEthel(height, radius);
+        assertEquals(expResult, result);
+        System.out.println("\t\tExpected result is: " + expResult);
+        System.out.println("\t\tActual result is: " + result);
+        
+        /*******************************
+         * Test Case #6
+         ******************************/
+        
+        System.out.println("\tTest case #1");
+        
+        height = 15;
+        radius = 25;
+        expResult = 29452;
+
+        UtilitiesControl instance = new UtilitiesControl();
+        result = (int) instance.calcAmountOfDirtEthel(height, radius);
+        assertEquals(expResult, result);
+        System.out.println("\t\tExpected result is: " + expResult);
+        System.out.println("\t\tActual result is: " + result);
+        
+        /*******************************
+         * Test Case #7
+         ******************************/
+        
+        System.out.println("\tTest case #1");
+        
+        height = 10;
+        radius = 25;
+        expResult = 19635;
+
+        UtilitiesControl instance = new UtilitiesControl();
+        result = (int) instance.calcAmountOfDirtEthel(height, radius);
+        assertEquals(expResult, result);
+        System.out.println("\t\tExpected result is: " + expResult);
+        System.out.println("\t\tActual result is: " + result);
 }
