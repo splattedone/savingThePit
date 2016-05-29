@@ -10,7 +10,7 @@ package cit260.savingThePit.control;
  * @author Appel & Ellis
  */
 public class UtilitiesControl {
-    public String response;
+    public int answer;
     
     public int calcTomatoAngleApril(int angle, int howHard){
         int answer;
@@ -62,50 +62,59 @@ public class UtilitiesControl {
         return Tbs;
     }
     
-    public String calcWafflesAnne(String make){
-        int i = 0;
+    public int calcWafflesAnne(int make, int howMany){
+        int i = make * howMany;
+        int charResponse = 0;
         
         if (i == 1) {
-            String charResponse = "Just one? That’s it? We are still friends, right?";
+            charResponse = -1;
+            //Response Code -1 : "Just one? That’s it? We are still friends, right?"
             return charResponse;
         }
                 
         if (i == 2) {
-            String charResponse = "Keep 'em coming. A woman's gotta eat";
+            charResponse = -2;
+            //Response Code -2 : "Keep 'em coming. A woman's gotta eat"
             return charResponse;
         }
                 
         if (i == 3) {
-            String charResponse = "Did you just stuff that fresh one in your face? Do I get any more?";
+            charResponse = -3;
+            //Response Code -3 : "Did you just stuff that fresh one in your face? Do I get any more?"
             return charResponse;
         }
                 
         if (i == 4) {
-            String charResponse = "That's three! That's the appetizers, now for the main course: more!";
+            charResponse = -4;
+            //Response Code -4 : "That's three! That's the appetizers, now for the main course: more!"
             return charResponse;
         }
                 
         if (i == 5) {
-            String charResponse = "Have I mentioned that I love waffles? And that I get really hungry before a 12-hour shift?";
+            charResponse = -5;
+            //Response Code -5 : "Have I mentioned that I love waffles? And that I get really hungry before a 12-hour shift?"
             return charResponse;
         }
                 
         if (i == 6) {
-            String charResponse = "Good job Knope! You make a mean Bisquick waffle.";
+            charResponse = -6;
+            //Response Code -6 : "Good job Knope! You make a mean Bisquick waffle."
             return charResponse;
         }
              
         if (i == 7) {
-            String charResponse = "Ok seriously, I just ate five. Don't tempt me.";
+            charResponse = -7;
+            //Response Code -7 : "Ok seriously, I just ate five. Don't tempt me."
             return charResponse;
         }
                 
         if (i >= 8) {
-            String charResponse = "Seriously, please stop.";
+            charResponse = -8;
+            //Response Code -8 : "Seriously, please stop."
             return charResponse;
         }
-        
-        return response;
+        answer = charResponse;
+        return answer;
     }
     
     public double calcAmountOfDirtEthel(int height, int radius){
@@ -117,9 +126,10 @@ public class UtilitiesControl {
             return -2;
         }
     
-        int volume = (3.142 * (radius * radius)) * height; 
+        double volume = (3.142 * (radius * radius)) * height; 
                 
         return volume;
+    }    
 }
 
 
