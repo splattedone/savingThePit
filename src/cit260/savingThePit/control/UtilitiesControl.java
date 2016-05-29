@@ -108,6 +108,20 @@ public class UtilitiesControl {
         return response;
     }
     
+    public double calcAmountOfDirtEthel(int height, int radius){
+        if (height < 10 || height > 25) {
+            return -1;
+        }
+        
+        if (radius < 25 || radius > 90) {
+            return -2;
+        }
+    
+        int volume = (3.142 * (radius * radius)) * height; 
+                
+        return volume;
 }
+
+
     
 

@@ -5,6 +5,7 @@ package savingthepit;
 
 import cit260.savingThePit.model.Game;
 import cit260.savingThePit.model.InventoryItem;
+import cit260.savingThePit.model.Item;
 import cit260.savingThePit.model.Location;
 import cit260.savingThePit.model.Map;
 import cit260.savingThePit.model.Player;
@@ -62,14 +63,23 @@ public class SavingThePit {
             System.out.println(mapInfo);
     
     // Inventory Item Test
-            InventoryItem itemTest = new InventoryItem();
+            InventoryItem inventoryItemTest = new InventoryItem();
+            
+            inventoryItemTest.setName ("Item1");
+            inventoryItemTest.setDescription ("description");
+            
+            String inventoryInfo = inventoryItemTest.toString();
+            System.out.println(inventoryInfo);
+          
+            
+    // Item Test
+            Item itemTest = new Item();
             
             itemTest.setName ("Item1");
             itemTest.setDescription ("description");
             
-            String inventoryInfo = itemTest.toString();
-            System.out.println(inventoryInfo);
-          
+            String itemInfo = itemTest.toString();
+            System.out.println(itemInfo);
                    /*
                    *[class name] [variableName] = new "className"()
                    *
