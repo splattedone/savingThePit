@@ -9,6 +9,7 @@ import cit260.savingThePit.model.Item;
 import cit260.savingThePit.model.Location;
 import cit260.savingThePit.model.Map;
 import cit260.savingThePit.model.Player;
+import cit260.savingThePit.view.StartProgramView;
 import java.util.HashSet;
 
 /**
@@ -16,79 +17,35 @@ import java.util.HashSet;
  * @author M@ Appel and Bethany Ellis
  */
 public class SavingThePit {
+  
+    private static Game currentGame = null;
+    private static Player player = null;
 
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        SavingThePit.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        SavingThePit.player = player;
+    }
+   
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-     
-    // Player Test
-            Player playerOne = new Player();   
-
-            playerOne.setName("Leslie");
-            playerOne.setBestScore(7.00);
-
-            String playerInfo = playerOne.toString();
-            System.out.println(playerInfo);
-    
-    // Game Test
-            Game gameSaveOne = new Game();
-
-            gameSaveOne.setMap("MattsGame");
-            gameSaveOne.setPlayer("Leslie");
-
-            String gameInfo = gameSaveOne.toString();
-            System.out.println(gameInfo);
-     
-    // Location Test 
-            // Note 1: I realized I had planned to name locations after characters, so to keep things simple I plan to just specify for each object. We'll have locationAnne and characterAnne, and the respective format for the other characters and locations. 
-
-            // Note 2: We'll have to come back later to change these values to the character objects once they've been created. I tried to code them now to character Anne and characterAndy but it raised an error.
-
-            Location locationAnne = new Location();
-
-            locationAnne.setLocationName("Anne in the Courtyard");
-            locationAnne.setLocationScene("Scene1");
-            locationAnne.setLocationCharacters("Anne");
-
-            String locationInfo = locationAnne.toString();
-            System.out.println(locationInfo);
-            
-    // Map Test
-            Map mainMap = new Map();
-            
-            mainMap.setLocations("Anne");
-            
-            String mapInfo = mainMap.toString();
-            System.out.println(mapInfo);
-    
-    // Inventory Item Test
-            InventoryItem inventoryItemTest = new InventoryItem();
-            
-            inventoryItemTest.setName ("Item1");
-            inventoryItemTest.setDescription ("description");
-            
-            String inventoryInfo = inventoryItemTest.toString();
-            System.out.println(inventoryInfo);
-          
-            
-    // Item Test
-            Item itemTest = new Item();
-            
-            itemTest.setName ("Item1");
-            itemTest.setDescription ("description");
-            
-            String itemInfo = itemTest.toString();
-            System.out.println(itemInfo);
-                   /*
-                   *[class name] [variableName] = new "className"()
-                   *
-                   *[variableName].value1("value")
-                   *[variableName].value2("value")
-                   *
-                   * [variable type] [variableName] = [variableName].toString();
-                   * System.out.println([variableName]);
-                   */
+       
+        // create StartProgramViewOrig and display the start program view
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
+   
     }
     
 }
