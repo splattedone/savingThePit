@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -74,7 +74,7 @@ public class StartProgramView {
         String value = ""; // value to be returned
         boolean valid = false; // initialize to not valid
         
-        while (!valid) { // loop while an invalid value is enter
+        while (!valid) { // loop while an invalid value is entered
             System.out.println("\n" + this.promptMessage);
             
             value = keyboard.nextLine(); // get next line typed on keyboard

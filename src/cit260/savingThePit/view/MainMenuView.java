@@ -5,6 +5,9 @@
  */
 package cit260.savingThePit.view;
 
+import cit260.savingThePit.control.GameControl;
+import savingthepit.SavingThePit;
+
 /**
  *
  * @author bethanyellis
@@ -27,6 +30,7 @@ public class MainMenuView {
                   + "\nQ - Quit"
                   + "\n------------------------------";
     }
+    
     public void displayMainMenuView() {
         
         boolean done = false;
@@ -40,7 +44,6 @@ public class MainMenuView {
             done = this.doAction(menuOption);
             
         } while (!done);
-        
     }
 
     private String getMenuOption() {
@@ -67,13 +70,21 @@ public class MainMenuView {
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
+                break;
         }
         
         return false;
     }
     
     private void startNewGame() {
-        System.out.println("*** startNewGame function called ***");
+        //System.out.println("*** startNewGame function called ***");
+        
+        // Create a new game
+        GameControl.createNewGame(SavingThePit.getPlayer());
+        
+        // display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
     private void startExistingGame() {
         System.out.println("*** startExistingGame function called ***");
