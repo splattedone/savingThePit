@@ -6,6 +6,7 @@
 package cit260.savingThePit.view;
 
 import cit260.savingThePit.control.GameControl;
+import java.util.Scanner;
 import savingthepit.SavingThePit;
 
 /**
@@ -15,6 +16,7 @@ import savingthepit.SavingThePit;
 public class MainMenuView {
     
     private String menu;
+    private String promptMessage = "Where should we start?";
 
     public MainMenuView() {
         this.menu = "\n"
@@ -47,9 +49,29 @@ public class MainMenuView {
     }
 
     private String getMenuOption() {
-        System.out.println("\n*** getMenuOption() function called ***");
-        return "N";
-    }
+        //System.out.println("\n*** getMenuOption() function called ***");
+        //return "N";
+        
+        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        String value = ""; // value to be returned
+        boolean valid = false; // initialize to not valid
+        
+        while (!valid) { // loop while an invalid value is entered
+            System.out.println(this.menu);
+            System.out.println("\n" + this.promptMessage);
+            
+            value = keyboard.nextLine(); // get next line typed on keyboard
+            value = value.trim(); // trim off leading and trailing blanks 
+            
+            if (value.length() < 1) { // value is blank
+                System.out.println("\nInvalid value: value can not be blank");
+                continue;
+            }
+            
+            break; // end the loop
+        }
+        return value;
+    }    
 
     public boolean doAction(String choice) {
         
@@ -66,7 +88,7 @@ public class MainMenuView {
                 this.displayHelpMenu();
                 break;
             case "S":
-                this.displayHelpMenu();
+                this.saveGame();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
@@ -92,8 +114,10 @@ public class MainMenuView {
     private void saveGame() {
         System.out.println("*** saveGame function called ***");
     }
-    private void displayHelpMenu() {
-        System.out.println("*** displayHelpMenu function called ***");
+    private boolean displayHelpMenu() {
+        HelpMenuView helpMenu = new HelpMenuView();
+        System.out.println(helpMenu);
+        return false;
     }
     
 }

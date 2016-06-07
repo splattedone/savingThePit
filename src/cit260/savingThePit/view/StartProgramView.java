@@ -68,6 +68,8 @@ public class StartProgramView {
         
         }
 
+    
+    
     private String getPlayersName() {
         
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
@@ -129,3 +131,21 @@ public class StartProgramView {
     }
     
 }
+
+
+/*
+    public HelpMenuView() {
+        this.menu = "\n"
+                  + "\n------------------------------"
+                  + "\n| Help Menu                  |"
+                  + "\n------------------------------"
+                  + "\nP - Playing the Game"
+                  + "\nN - Navigating the Game"
+                  + "\nI - How Do Items Work?"
+                  + "\nB - How Do Bribes Work?"
+                  + "\nM - Return to Main Menu"
+                  + "\nS - Save Game"
+                  + "\nQ - Quit"
+                  + "\n------------------------------";
+
+*/
