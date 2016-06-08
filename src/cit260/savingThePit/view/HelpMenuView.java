@@ -81,19 +81,49 @@ public class HelpMenuView {
         switch (choice) {
             case "P": //Display gameplay basics
                 System.out.println("\nGameplay Help:"
-                                 + "\nGameplay here is simple. Your goal as a public servant is to save the pit from Councilman Jamm. You'll need the help of the Parks and Recreation department though. They're all a little strange (what did you expect from government workers?) so you'll probably have to bribe them or submit to their silly requests. If you do, each one of them will contribute something useful in your fight against the total jerk/twerp we all know as Councilman Jamm. Defeat his measure to build a PonchBurger in the pit and you'll recieve the reward fitting of a public servant of your caliber.");
+                                 + "\nGameplay here is simple."
+                                +"\nYour goal as a public servant is to "
+                                +"\nsave the pit from Councilman Jamm."
+                                +"\nYou'll need the help of the Parks and "
+                                +"\nRecreation department though. They're "
+                                +"\nall a little strange (what did you expect "
+                                +"\nfrom government workers?) so you'll probably "
+                                +"\nhave to bribe them or submit to their silly "
+                                +"\nrequests. If you do, each one of them will "
+                                +"\ncontribute something useful in your fight "
+                                +"\nagainst the total jerk/twerp we all know "
+                                +"\nas Councilman Jamm. Defeat his measure to "
+                                +"\n build a PonchBurger in the pit and you'll "
+                                +"\nrecieve the reward fitting of a public servant"
+                                +"\nof your caliber.");
                 break;
             case "N": //Display navigation help
                 System.out.println("\nNavigation Help:"
-                                    +"\nIf you're reading this, you're probably a college student in a 300 level class. Don't be silly - you just find the option you want and type the corresponding character. It's so easy, you had to do it a couple of times to get here, so if you're still confused about it I'm not sure there's much help for you. Have you considered a career in local government?");
+                                    +"\nIf you're reading this, you're probably a "
+                                    +"\ncollege student in a 300 level class. Don't"
+                                    +"\n be silly - you just find the option you want"
+                                    +"\nand type the corresponding character. It's so "
+                                    +"\neasy, you had to do it a couple of times to get "
+                                    +"\nhere, so if you're still confused about it I'm "
+                                    +"\nnot sure there's much help for you. Have you "
+                                    +"\nconsidered a career in local government?");
                 break;
             case "I": //Display item help
                 System.out.println("\nItem Help:"
-                                    +"\nAs you stroll around City Hall you'll see items laying around. PICK THEM UP! You never know when you'll need to bribe someone with a bushell of rotten tomatoes. ");
+                                    +"\nAs you stroll around City Hall you'll see"
+                                    +"\nitems laying around. PICK THEM UP! You never"
+                                    +"\n know when you'll need to bribe someone with "
+                                    +"\na bushell of rotten tomatoes.");
                 break;
             case "B": //Display bribe help
                 System.out.println("\nBribe Help:"
-                                    +"\nWhat would happen on an average day in city hall without any bribes? Once you've collected items around City Hall, use them to convince your friends to do your bidding. It's not really as evil as it sounds, unless you're Councilman Jamm - that guy is just a jerk all around.");
+                                    +"\nWhat would happen on an average day in "
+                                    +"\nCity Hall without any bribes? Once you've"
+                                    +"\ncollected items around City Hall, use "
+                                    +"\nthem to convince your friends to do your"
+                                    +"\nbidding. It's not really as evil as it "
+                                    +"\nsounds, unless you're Councilman Jamm - "
+                                    +"\nthat guy is just a jerk all around.");
                 break;    
             case "S":
                 this.saveGame();
