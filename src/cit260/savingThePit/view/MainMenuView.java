@@ -116,7 +116,7 @@ public class MainMenuView {
     }
     private boolean displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        System.out.println(helpMenu);
+        helpMenu.displayMainMenuView();
         return false;
     }
     
