@@ -13,34 +13,37 @@ import savingthepit.SavingThePit;
  *
  * @author bethanyellis
  */
-public class MainMenuView {
+public class InventoryMenuView {
     
     private String menu;
-    private String promptMessage = "Where should we start?";
+    private String promptMessage = "Let's take a look at your stash ";
+    private Object savingThePit;
 
-    public MainMenuView() {
+    public InventoryMenuView() {
         this.menu = "\n"
                   + "\n------------------------------"
-                  + "\n| Main Menu                  |"
+                  + "\n| Inventory Menu                  |"
                   + "\n------------------------------"
-                  + "\nN - Start new game"
-                  + "\nR - Resume a Game"
-                  + "\nG - Show Me the Game Play Menu"
-                  + "\nH - Show Me the Help Menu"
-                  + "\nB - Tell Me About Bribes"
+                  + "\nA - April's Item "
+                  + "\nD - Donna's Item"
+                  + "\nR - Ron's Item"
+                  + "\nG - Gary's Item"
+                  + "\nT - Tom's Item"
+                  + "\nE - Ethel's Item"
+                  + "\nM - Return to Main Menu"
                   + "\nS - Save Game"
                   + "\nQ - Quit"
                   + "\n------------------------------";
     }
     
-    public void displayMainMenuView() {
+    public void displayInventoryMenuView() {
         
         boolean done = false;
         do {
             // prompt for and get players name
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q")) // user wants to quit
-                return; //  exit the game
+                return; // exit the game
             
             // do the requested action and display the next view
             done = this.doAction(menuOption);
@@ -78,18 +81,27 @@ public class MainMenuView {
         choice = choice.toUpperCase(); //Convert choice to uppercase
         
         switch (choice) {
-            case "N": // create and start a new game
-                this.startNewGame();
+            case "A": //Display gameplay basics
+                System.out.println("\nHere is some black eye shadow");
                 break;
-            case "G": // get and start existing game
-                this.startExistingGame();
+            case "D": //Display navigation help
+                System.out.println("\nHere is a new iPhone");
                 break;
-            case "H": //Display help menu
-                this.displayHelpMenu();
+            case "R": //Display item help
+                System.out.println("\nHere is a side of Bacon");
                 break;
+            case "G": //Display bribe help
+                System.out.println("\nHere is a half eaten burrito");
+                break;  
+            case "T": //Display bribe help
+                System.out.println("\nHere is some Snake Juice");
+                break; 
+            case "E": //Display bribe help
+                System.out.println("\nHere is An Old Boyfriend's Phone Number");
+                break; 
             case "S":
                 this.saveGame();
-                break;
+                break; 
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
@@ -114,10 +126,8 @@ public class MainMenuView {
     private void saveGame() {
         System.out.println("*** saveGame function called ***");
     }
-    private boolean displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMainMenuView();
-        return false;
+    private void displayHelpMenu() {
+        System.out.println("*** displayHelpMenu function called ***");
     }
     
 }
