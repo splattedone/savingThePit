@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class GameMenuView {
     
-        private String menu;
+    private String menu;
     private String promptMessage = "Let's take a look at your stash ";
     private Object savingThePit;
 
@@ -76,17 +76,14 @@ public class GameMenuView {
         switch (choice) {
             case "M": //Display gameplay basics
                 this.showInventory();
-                System.out.println("\nDisplay Menu");
+                System.out.println("\nDisplay Map");
                 break;
             case "I": //Display navigation help
                 System.out.println("\nView Inventory");
                 break;
             case "L": //Display item help
                 System.out.println("\nMove to New Location");
-                break;
-            case "Q": //Display bribe help
-                System.out.println("\nHere is a half eaten burrito");
-                break;  
+                break; 
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
@@ -96,8 +93,11 @@ public class GameMenuView {
     }
 
     private void showInventory() {
-        InventoryMenuView inventoryMenu=new InventoryMenuView(); //To change body of generated methods, choose Tools | Templates.
+        InventoryMenuView inventoryMenu = new InventoryMenuView(); 
         inventoryMenu.displayInventoryMenuView();
     }
-    
+    private void showMap() {
+        MapView mapMenu = new MapView(); 
+        mapMenu.displayMapView();
+    }
 }
