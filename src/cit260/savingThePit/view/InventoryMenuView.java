@@ -30,8 +30,6 @@ public class InventoryMenuView {
                   + "\nG - Gary's Item"
                   + "\nT - Tom's Item"
                   + "\nE - Ethel's Item"
-                  + "\nM - Return to Main Menu"
-                  + "\nS - Save Game"
                   + "\nQ - Quit"
                   + "\n------------------------------";
     }
@@ -98,10 +96,7 @@ public class InventoryMenuView {
                 break; 
             case "E": //Display bribe help
                 System.out.println("\nHere is An Old Boyfriend's Phone Number");
-                break; 
-            case "S":
-                this.saveGame();
-                break; 
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
@@ -109,25 +104,4 @@ public class InventoryMenuView {
         
         return false;
     }
-    
-    private void startNewGame() {
-        //System.out.println("*** startNewGame function called ***");
-        
-        // Create a new game
-        GameControl.createNewGame(SavingThePit.getPlayer());
-        
-        // display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-    }
-    private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***");
-    }
-    private void saveGame() {
-        System.out.println("*** saveGame function called ***");
-    }
-    private void displayHelpMenu() {
-        System.out.println("*** displayHelpMenu function called ***");
-    }
-    
 }
