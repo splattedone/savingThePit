@@ -17,7 +17,7 @@ public class GameMenuView {
     private String promptMessage = "Let's take a look at your stash ";
     private Object savingThePit;
 
-    public GameMenuView() {
+    public void GameMenuView() {
         this.menu = "\n"
                   + "\n------------------------------"
                   + "\n| Game Menu                  |"
