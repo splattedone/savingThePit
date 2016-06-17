@@ -12,6 +12,8 @@ package cit260.savingThePit.control;
 public class UtilitiesControl {
     public int answer;
     
+    //UtilitiesControl.calcTomatoAngleApril(7,5))
+    
     public static int calcTomatoAngleApril(int angle, int howHard){
         int answer;
  

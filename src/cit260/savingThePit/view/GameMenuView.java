@@ -11,14 +11,14 @@ import java.util.Scanner;
  *
  * @author Appel
  */
-public class GameMenuView {
+public class GameMenuView extends View{
     
     private String menu;
     private String promptMessage = "Let's take a look at your stash ";
     private Object savingThePit;
 
-    public void GameMenuView() {
-        this.menu = "\n"
+    public GameMenuView() {
+        super("\n"
                   + "\n------------------------------"
                   + "\n| Game Menu                  |"
                   + "\n------------------------------"
@@ -26,10 +26,42 @@ public class GameMenuView {
                   + "\nI - View Inventory"
                   + "\nL - Move to new location"
                   + "\nQ - Quit"
-                  + "\n------------------------------";
+                  + "\n------------------------------");
+    }    
+
+    public boolean doAction(String value) {
+        
+        value = value.toUpperCase(); //Convert choice to uppercase
+        
+        switch (value) {
+            case "M": //Display gameplay basics
+                this.showInventory();
+                System.out.println("\nDisplay Map");
+                break;
+            case "I": //Display navigation help
+                System.out.println("\nView Inventory");
+                break;
+            case "L": //Display item help
+                System.out.println("\nMove to New Location");
+                break; 
+            default:
+                System.out.println("\n*** Invalid selection *** Try Again");
+                break;
+        }
+        
+        return false;
     }
-    
-    public void displayGameMenuView() {
+
+    private void showInventory() {
+        InventoryMenuView inventoryMenu = new InventoryMenuView(); 
+        inventoryMenu.display();
+    }
+    private void showMap() {
+        MapView mapMenu = new MapView(); 
+        mapMenu.display();
+    }
+/*
+       public void displayGameMenuView() {
         
         boolean done = false;
         do {
@@ -67,37 +99,8 @@ public class GameMenuView {
             break; // end the loop
         }
         return value;
-    }    
+    }
+    */
 
-    public boolean doAction(String choice) {
-        
-        choice = choice.toUpperCase(); //Convert choice to uppercase
-        
-        switch (choice) {
-            case "M": //Display gameplay basics
-                this.showInventory();
-                System.out.println("\nDisplay Map");
-                break;
-            case "I": //Display navigation help
-                System.out.println("\nView Inventory");
-                break;
-            case "L": //Display item help
-                System.out.println("\nMove to New Location");
-                break; 
-            default:
-                System.out.println("\n*** Invalid selection *** Try Again");
-                break;
-        }
-        
-        return false;
-    }
 
-    private void showInventory() {
-        InventoryMenuView inventoryMenu = new InventoryMenuView(); 
-        inventoryMenu.displayInventoryMenuView();
-    }
-    private void showMap() {
-        MapView mapMenu = new MapView(); 
-        mapMenu.displayMapView();
-    }
 }

@@ -13,14 +13,14 @@ import savingthepit.SavingThePit;
  *
  * @author bethanyellis
  */
-public class InventoryMenuView {
+public class InventoryMenuView extends View{
     
     private String menu;
     private String promptMessage = "Let's take a look at your stash ";
     private Object savingThePit;
 
     public InventoryMenuView() {
-        this.menu = "\n"
+        super("\n"
                   + "\n------------------------------"
                   + "\n| Inventory Menu                  |"
                   + "\n------------------------------"
@@ -31,9 +31,41 @@ public class InventoryMenuView {
                   + "\nT - Tom's Item"
                   + "\nE - Ethel's Item"
                   + "\nQ - Quit"
-                  + "\n------------------------------";
+                  + "\n------------------------------");
     }
-    
+  
+    public boolean doAction(String value) {
+        
+        value = value.toUpperCase(); //Convert choice to uppercase
+        
+        switch (value) {
+            case "A": //Display gameplay basics
+                System.out.println("\nHere is some black eye shadow");
+                break;
+            case "D": //Display navigation help
+                System.out.println("\nHere is a new iPhone");
+                break;
+            case "R": //Display item help
+                System.out.println("\nHere is a side of Bacon");
+                break;
+            case "G": //Display bribe help
+                System.out.println("\nHere is a half eaten burrito");
+                break;  
+            case "T": //Display bribe help
+                System.out.println("\nHere is some Snake Juice");
+                break; 
+            case "E": //Display bribe help
+                System.out.println("\nHere is An Old Boyfriend's Phone Number");
+                break;
+            default:
+                System.out.println("\n*** Invalid selection *** Try Again");
+                break;
+        }
+        
+        return false;
+    }
+
+    /*
     public void displayInventoryMenuView() {
         
         boolean done = false;
@@ -73,35 +105,7 @@ public class InventoryMenuView {
         }
         return value;
     }    
+    */
 
-    public boolean doAction(String choice) {
-        
-        choice = choice.toUpperCase(); //Convert choice to uppercase
-        
-        switch (choice) {
-            case "A": //Display gameplay basics
-                System.out.println("\nHere is some black eye shadow");
-                break;
-            case "D": //Display navigation help
-                System.out.println("\nHere is a new iPhone");
-                break;
-            case "R": //Display item help
-                System.out.println("\nHere is a side of Bacon");
-                break;
-            case "G": //Display bribe help
-                System.out.println("\nHere is a half eaten burrito");
-                break;  
-            case "T": //Display bribe help
-                System.out.println("\nHere is some Snake Juice");
-                break; 
-            case "E": //Display bribe help
-                System.out.println("\nHere is An Old Boyfriend's Phone Number");
-                break;
-            default:
-                System.out.println("\n*** Invalid selection *** Try Again");
-                break;
-        }
-        
-        return false;
-    }
+
 }

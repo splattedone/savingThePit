@@ -13,14 +13,14 @@ import savingthepit.SavingThePit;
  *
  * @author Appel
  */
-public class MapView {
+public class MapView extends View{
     
     private String menu;
     private String promptMessage = "So... who are we going to visit?";
     private Object savingThePit;
 
     public MapView() {
-        this.menu = "\n"
+        super ("\n"
                   + "\n------------------------------"
                   + "\n| Map Menu                  |"
                   + "\n------------------------------"
@@ -34,52 +34,15 @@ public class MapView {
                   + "\nE - Visit Ethel Beavers"
                   + "\nS - Save Game"
                   + "\nQ - Quit"
-                  + "\n------------------------------";
-    }
-    
-    public void displayMapView() {
-        
-        boolean done = false;
-        do {
-            // prompt for and get players name
-            String mapOption = this.getMapOption();
-            if (mapOption.toUpperCase().equals("Q")) // user wants to quit
-                return; // exit the game
-            
-            // do the requested action and display the next view
-            done = this.doAction(mapOption);
-            
-        } while (!done);
+                  + "\n------------------------------");
     }
 
-    private String getMapOption() {
+    @Override
+    public boolean doAction(String value) {
         
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
+        value = value.toUpperCase(); //Convert choice to uppercase
         
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println(this.menu);
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks 
-            
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break; // end the loop
-        }
-        return value;
-    }    
-
-    public boolean doAction(String choice) {
-        
-        choice = choice.toUpperCase(); //Convert choice to uppercase
-        
-        switch (choice) {
+        switch (value) {
             case "A": //Go Visit April
                 this.aprilView();
                 break;
@@ -150,6 +113,44 @@ public class MapView {
     private void ethelView() {
         System.out.println("*** ethelView method called ***");
     }
-    
+       /*
+        public void displayMapView() {
+        
+        boolean done = false;
+        do {
+            // prompt for and get players name
+            String mapOption = this.getMapOption();
+            if (mapOption.toUpperCase().equals("Q")) // user wants to quit
+                return; // exit the game
+            
+            // do the requested action and display the next view
+            done = this.doAction(mapOption);
+            
+        } while (!done);
+    }
+        private String getMapOption() {
+        
+        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        String value = ""; // value to be returned
+        boolean valid = false; // initialize to not valid
+        
+        while (!valid) { // loop while an invalid value is entered
+            System.out.println(this.menu);
+            System.out.println("\n" + this.promptMessage);
+            
+            value = keyboard.nextLine(); // get next line typed on keyboard
+            value = value.trim(); // trim off leading and trailing blanks 
+            
+            if (value.length() < 1) { // value is blank
+                System.out.println("\nInvalid value: value can not be blank");
+                continue;
+            }
+            
+            break; // end the loop
+        }
+        return value;
+    }    
+    */ 
+
     
 }

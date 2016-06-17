@@ -48,7 +48,7 @@ public class UtilitiesControlTest {
         
         angle = 15;
         howHard = 0;
-        expResult = -4;
+        expResult = 0;
  
         result = instance.calcTomatoAngleApril(angle, howHard);
         assertEquals(expResult, result);
