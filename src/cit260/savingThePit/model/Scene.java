@@ -21,8 +21,6 @@ public class Scene implements Serializable{
 
     public Scene() {
     }
-
-    
     
     public String getName() {
         return name;

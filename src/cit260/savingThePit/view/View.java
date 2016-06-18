@@ -18,11 +18,7 @@ public abstract class View implements ViewInterface{
         public boolean doAction(String value);
     */
     protected String displayMessage;
-    
-    public View () {
-        
-    }
-    
+       
     public View(String message){
         this.displayMessage = message;
     }

@@ -12,35 +12,7 @@ import java.util.Scanner;
 /**
  *
  * @author Appel
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * This was Matt trying to work ahead and failing miserably.
- * 
- * Don't grade this yet.
- * 
- * 
- * 
- * 
- * 
- * 
- * Please....
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
+ *
  */
 public class CharacterView {
     private String howHard;
