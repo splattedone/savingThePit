@@ -65,9 +65,7 @@ public class MainMenuView extends View{
     }
     
     private void startNewGame() {
-        //System.out.println("*** startNewGame function called ***");
-        
-        // Create a new game
+        // create a new game
         GameControl.createNewGame(SavingThePit.getPlayer());
         
         // display the game menu
@@ -90,61 +88,5 @@ public class MainMenuView extends View{
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
-    
-    /*
-    private String menu = "\n"
-                  + "\n------------------------------"
-                  + "\n| Main Menu                  |"
-                  + "\n------------------------------"
-                  + "\nN - Start new game"
-                  + "\nR - Resume a Game"
-                  + "\nG - Show Me the Game Play Menu"
-                  + "\nH - Show Me the Help Menu"
-                  + "\nB - Tell Me About Bribes"
-                  + "\nS - Save Game"
-                  + "\nQ - Quit"
-                  + "\n------------------------------";
-    */
-    /*
-    public void displayMainMenuView() {
-        boolean done = false;
-        do {
-            // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) // user wants to quit
-                return; //  exit the game
-            
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        //System.out.println("\n*** getMenuOption() function called ***");
-        //return "N";
-        
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println(this.menu);
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks 
-            
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break; // end the loop
-        }
-        return value;
-    }  
-    
-    */ 
     
 }

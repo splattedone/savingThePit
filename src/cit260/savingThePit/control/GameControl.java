@@ -29,7 +29,26 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+        
+        Game game = new Game(); // create new game
+        SavingThePit.setCurrentGame(game); / save in SavingThePit
+        
+        game.setPlayer(player); // save player in game
+        
+        //create the inventory list and save in the game
+        InventoryItem[] inventorylist = GameControl.createInventorylist();
+        game.setInventory(inventoryList);
+        
+        Map map = MapControl.createMap(); // create and initialize new map
+        game.setMap(map);
+        
+        // move actors to starting position in the map
+        MapControl.moveActorsToStartingLocation(map);
+        
     }
     
+    public static InventoryItem[] createInventoryList(){
+        System.out.println("*** called createInventoryList() in GameContol ***");
+        return null;
+    }
 }

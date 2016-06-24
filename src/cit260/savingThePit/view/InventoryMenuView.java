@@ -30,6 +30,8 @@ public class InventoryMenuView extends View{
                   + "\nG - Gary's Item"
                   + "\nT - Tom's Item"
                   + "\nE - Ethel's Item"
+                  + "\nJ - Jamm's Item"
+                  + "\nN - Anne's Item"
                   + "\nQ - Quit"
                   + "\n------------------------------");
     }
@@ -40,7 +42,7 @@ public class InventoryMenuView extends View{
         
         switch (value) {
             case "A": //Display gameplay basics
-                System.out.println("\nHere is some black eye shadow");
+                System.out.println("\nHere is bushell of rotting tomatoes");
                 break;
             case "D": //Display navigation help
                 System.out.println("\nHere is a new iPhone");
@@ -54,6 +56,12 @@ public class InventoryMenuView extends View{
             case "T": //Display bribe help
                 System.out.println("\nHere is some Snake Juice");
                 break; 
+            case "J": //Display bribe help
+                System.out.println("\nHere is a petition");
+                break; 
+            case "N": //Display bribe help
+                System.out.println("\nHere is a keyring full of keys");
+                break; 
             case "E": //Display bribe help
                 System.out.println("\nHere is An Old Boyfriend's Phone Number");
                 break;
@@ -64,48 +72,5 @@ public class InventoryMenuView extends View{
         
         return false;
     }
-
-    /*
-    public void displayInventoryMenuView() {
-        
-        boolean done = false;
-        do {
-            // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) // user wants to quit
-                return; // exit the game
-            
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        //System.out.println("\n*** getMenuOption() function called ***");
-        //return "N";
-        
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println(this.menu);
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks 
-            
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break; // end the loop
-        }
-        return value;
-    }    
-    */
-
 
 }

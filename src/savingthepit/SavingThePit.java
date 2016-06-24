@@ -37,9 +37,6 @@ public class SavingThePit {
         SavingThePit.player = player;
     }
    
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
        
         // create StartProgramViewOrig and display the start program view
