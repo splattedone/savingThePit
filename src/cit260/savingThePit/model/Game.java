@@ -19,6 +19,8 @@ public class Game implements Serializable{
     // We will likely need to change these when we understand better how the save/load commands will work. I'm a little fuzzy on that at this point. MA 5/14/16
     private String map;
     private String player;
+    
+    private InventoryItem[] inventory;
 
     public Game() {
     }
@@ -36,10 +38,19 @@ public class Game implements Serializable{
     public String getPlayer() {
         return player;
     }
-
+ 
     public void setPlayer(String player) {
         this.player = player;
     }
+    
+    public InventoryItem[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
+    }
+   
 
     @Override
     public int hashCode() {
