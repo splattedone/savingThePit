@@ -11,6 +11,9 @@ public class Location implements Serializable{
     private String locationName;
     private String locationScene;
     private String locationCharacters;
+    private boolean visited;
+    private Scene scene;
+    private ArrayList<Actor> actors;
 
     public String getLocationName() {
         return locationName;

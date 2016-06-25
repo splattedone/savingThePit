@@ -37,15 +37,15 @@ public class GameMenuView extends View{
         value = value.toUpperCase(); //Convert choice to uppercase
         
         switch (value) {
-            case "M": //Display gameplay basics
-                this.showInventory();
+            case "M":
+                this.showMap();
                 System.out.println("\nDisplay Map");
                 break;
-            case "I": //Display navigation help
-                System.out.println("\nView Inventory");
+            case "I":
+                this.showInventory();
                 break;
-            case "L": //Display item help
-                System.out.println("\nMove to New Location");
+            case "L":
+                this.showInventory();
                 break; 
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
@@ -64,7 +64,7 @@ public class GameMenuView extends View{
         mapMenu.display();
     }
     public void startNewGame(){
-        GameControl gameControl = new GameControl.createNewGame(Player);
+        GameControl gameControl = new GameControl.createNewGame(Player player);
         StartProgramView startProgramView = new StartProgramView();
     }
     
