@@ -1,6 +1,7 @@
 package cit260.savingThePit.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -13,7 +14,8 @@ public class Location implements Serializable{
     private String locationCharacters;
     private boolean visited;
     private Scene scene;
-    private ArrayList<Actor> actors;
+    private int row;
+    private int column;
 
     public String getLocationName() {
         return locationName;
@@ -39,20 +41,49 @@ public class Location implements Serializable{
         this.locationCharacters = locationCharacters;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.locationName);
-        hash = 53 * hash + Objects.hashCode(this.locationScene);
-        hash = 53 * hash + Objects.hashCode(this.locationCharacters);
-        return hash;
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
     }
 
     @Override
-    public String toString() {
-        return "Location{" + "locationName=" + locationName + ", locationScene=" + locationScene + ", locationCharacters=" + locationCharacters + '}';
+    public int hashCode() {
+        int hash = 7;
+        hash = 11 * hash + Objects.hashCode(this.locationName);
+        hash = 11 * hash + Objects.hashCode(this.locationScene);
+        hash = 11 * hash + Objects.hashCode(this.locationCharacters);
+        hash = 11 * hash + (this.visited ? 1 : 0);
+        hash = 11 * hash + Objects.hashCode(this.scene);
+        return hash;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -71,9 +102,21 @@ public class Location implements Serializable{
         if (!Objects.equals(this.locationCharacters, other.locationCharacters)) {
             return false;
         }
+        if (this.visited != other.visited) {
+            return false;
+        }
+        if (!Objects.equals(this.scene, other.scene)) {
+            return false;
+        }
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Location{" + "locationName=" + locationName + ", locationScene=" + locationScene + ", locationCharacters=" + locationCharacters + ", visited=" + visited + ", scene=" + scene + '}';
+    }
+
+    
     
 
 }

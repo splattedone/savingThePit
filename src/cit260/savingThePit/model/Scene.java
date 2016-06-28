@@ -18,8 +18,27 @@ public class Scene implements Serializable{
     private String name;
     private String characters;
     private String description;
+    private int visitedCount; 
+
+    public int getVisitedCount() {
+        return visitedCount;
+    }
+
+    public void setVisitedCount(int visitedCount) {
+        this.visitedCount = visitedCount;
+    }
+
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
+    private String mapSymbol;
 
     public Scene() {
+        visitedCount = 0;
     }
     
     public String getName() {

@@ -14,32 +14,29 @@ import java.util.Objects;
  */
 public class Game implements Serializable{
     
-    private double totalTime;
-    
-    private String map;
-    private String player;
+    private Map map;
+    private Player player;
     private InventoryItem[] inventory; 
         
     public Game() {
     }
 
-
-    public String getMap() {
+    public Map getMap() {
         return map;
     }
 
-    public void setMap(String map) {
+    public void setMap(Map map) {
         this.map = map;
     }
 
-    public String getPlayer() {
+    public Player getPlayer() {
         return player;
     }
- 
-    public void setPlayer(String player) {
+
+    public void setPlayer(Player player) {
         this.player = player;
     }
-    
+
     public InventoryItem[] getInventory() {
         return inventory;
     }

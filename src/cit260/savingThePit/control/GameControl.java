@@ -5,6 +5,9 @@
  */
 package cit260.savingThePit.control;
 
+import cit260.savingThePit.model.Game;
+import cit260.savingThePit.model.InventoryItem;
+import cit260.savingThePit.model.Map;
 import cit260.savingThePit.model.Player;
 import savingthepit.SavingThePit;
 
@@ -31,19 +34,19 @@ public class GameControl {
     public static void createNewGame(Player player) {
         
         Game game = new Game(); // create new game
-        SavingThePit.setCurrentGame(game); / save in SavingThePit
+        SavingThePit.setCurrentGame(game); // save in SavingThePit
         
         game.setPlayer(player); // save player in game
         
         //create the inventory list and save in the game
-        InventoryItem[] inventorylist = GameControl.createInventorylist();
+        InventoryItem[] inventoryList = InventoryControl.createInventoryList();
         game.setInventory(inventoryList);
         
         Map map = MapControl.createMap(); // create and initialize new map
         game.setMap(map);
         
         // move actors to starting position in the map
-        MapControl.moveActorsToStartingLocation(map);
+        MapControl.movePlayerToStartingLocation(map);
         
     }
     

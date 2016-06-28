@@ -6,6 +6,8 @@
 package cit260.savingThePit.view;
 
 import cit260.savingThePit.control.GameControl;
+import cit260.savingThePit.model.Game;
+import cit260.savingThePit.model.InventoryItem;
 import java.util.Scanner;
 import savingthepit.SavingThePit;
 
@@ -72,5 +74,29 @@ public class InventoryMenuView extends View{
         
         return false;
     }
-
+    
+        private void viewInventory(){
+        StringBuilder line;
+        
+        Game game = SavingThePit.getCurrentGame();
+        InventoryItem[] inventory = game.getInventory();
+        
+        System.out.println("\n List of Invtory Items");
+        line = new StringBuilder("                        ");
+        line.insert(0, "Description");
+        line.insert(20, "Required");
+        line.insert(30, "In Stock");
+        System.out.println(line.toString());
+        
+       for (InventoryItem item : inventory) {
+           line = new StringBuilder("                              ");
+           line.insert(0, item.getDescription());
+           line.insert(23, item.getRequiredAmount());
+           line.insert(33, item.getQuantityInStock());
+           
+           // Display the line
+           System.out.println(line.toString());
+       }
+        
+    }
 }

@@ -70,12 +70,13 @@ private String getActionOption(){
         choice = choice.toUpperCase(); //Convert choice to uppercase
         
         switch (choice) {
-            case "B": //call calcTomatoApril()
+            /* case "B": //call calcTomatoApril()
                 if (choice == "B" && InventoryControl.hasTomatoes() == true)
                     howFar = UtilitiesControl.calcTomatoAngleApril(angle, hard);
                 else 
                     System.out.println("\nIt doesn't look like I have anything to bribe                                         her with.");
                     break;
+            */    
              case "M": //Make a funny face
                 System.out.println("\nIt doesn't look like that helped");
                 break;

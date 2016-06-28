@@ -13,7 +13,7 @@ import java.util.Objects;
  * @author bethanyellis
  */
 public enum Character implements Serializable{
-     
+    
     April("Ron's assistant- don't look her in the eye!"),
     Andy("Office Idiot.  Does he even work here?"),
     Tom("Club owner, Business owner, restaurant owner."),
@@ -26,14 +26,11 @@ public enum Character implements Serializable{
     
     // class instance variables
     private final String items;
-    private final String location;
+    //private final String location;
 
-    public Character() {
-    }
     Character(String items){
         this.items = items;
-        location = new Location();
-}
+    }
     
 
     public String getItems() {
@@ -41,19 +38,10 @@ public enum Character implements Serializable{
     }
 
    
-
+/*
     public String getLocation() {
         return location;
     }
-
-
-    
-    @Override
-    public String toString() {
-        return "Character{" + "name=" + name + ", items=" + items + ", location=" + location + '}';
-    }
-
-   
-    
+*/  
     
 }
