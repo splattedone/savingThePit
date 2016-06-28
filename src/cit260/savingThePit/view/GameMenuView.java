@@ -104,5 +104,22 @@ public class GameMenuView extends View{
         }
             System.out.println("Your current location is " + map.getCurrentLocation().getScene().getDescription());
   }
+    /*
+    public static void countVisited (Map map, Location[][] locations){
+        int x = 0;
+        int y = 0;
+        if (x == 0 && y < 9; y++){
+            if (map.getCurrentLocation == true){
+                System.out.println("You have been to " + x +","+ y +".");
+            } else {
+                System.out.println("You not have been to " + x +","+ y +".");
+            }
+            
+            
+        }
+        
+        
+    }
+    */
     
 }

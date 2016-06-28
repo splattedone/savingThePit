@@ -62,4 +62,12 @@ public class InventoryControl {
                        
     }
     
+    public static void countInventory (InventoryItem[] inventory){
+        int inventoryCount = 0; 
+        int length = inventory.length; 
+        for (int i = 0; i < length; i++){
+            inventoryCount++ ;
+        }    
+        System.out.println("You have" + inventoryCount + "item types in your inventory.");
+    }            
 }
