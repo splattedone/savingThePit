@@ -49,112 +49,112 @@ public class MapControl {
         april3.setMapSymbol("HA");
         scenes[SceneType.april3.ordinal()] = april3;
         
-       /* Scene donna1 = new Scene();
+        Scene donna1 = new Scene();
         donna1.setDescription("Meet Donna");
         donna1.setMapSymbol("MD");
-        scenes[SceneType.start.ordinal()] = donna1;
+        scenes[SceneType.donna1.ordinal()] = donna1;
         
         Scene donna2 = new Scene();
-        donna2.setDescription("lorem");
+        donna2.setDescription("Talk Donna");
         donna2.setMapSymbol("TD");
-        scenes[SceneType.start.ordinal()] = donna2;
+        scenes[SceneType.donna2.ordinal()] = donna2;
         
         Scene donna3 = new Scene();
-        donna3.setDescription("lorem");
+        donna3.setDescription("Help Donna");
         donna3.setMapSymbol("HD");
-        scenes[SceneType.start.ordinal()] = donna3;
+        scenes[SceneType.donna3.ordinal()] = donna3;
         
         Scene ron1 = new Scene();
-        ron1.setDescription("Meet ");
+        ron1.setDescription("Meet Ron");
         ron1.setMapSymbol("MR");
-        scenes[SceneType.start.ordinal()] = ron1;
+        scenes[SceneType.ron1.ordinal()] = ron1;
         
         Scene ron2 = new Scene();
-        ron2.setDescription("lorem");
+        ron2.setDescription("Talk Ron");
         ron2.setMapSymbol("TR");
-        scenes[SceneType.start.ordinal()] = ron2;
+        scenes[SceneType.ron2.ordinal()] = ron2;
         
         Scene ron3 = new Scene();
-        ron3.setDescription("lorem");
+        ron3.setDescription("Help Ron");
         ron3.setMapSymbol("HR");
-        scenes[SceneType.start.ordinal()] = ron3;
+        scenes[SceneType.ron3.ordinal()] = ron3;
         
         Scene garry1 = new Scene();
-        garry1.setDescription("Meet ");
+        garry1.setDescription("Meet Garry");
         garry1.setMapSymbol("MG");
-        scenes[SceneType.start.ordinal()] = garry1;
+        scenes[SceneType.garry1.ordinal()] = garry1;
         
         Scene garry2 = new Scene();
-        garry2.setDescription("lorem");
+        garry2.setDescription("Talk Garry");
         garry2.setMapSymbol("TG");
-        scenes[SceneType.start.ordinal()] = garry2;
+        scenes[SceneType.garry2.ordinal()] = garry2;
         
         Scene garry3 = new Scene();
-        garry3.setDescription("lorem");
+        garry3.setDescription("Help Garry");
         garry3.setMapSymbol("HG");
-        scenes[SceneType.start.ordinal()] = garry3;
+        scenes[SceneType.garry3.ordinal()] = garry3;
         
         Scene tom1 = new Scene();
-        tom1.setDescription("Meet ");
-        tom1.setMapSymbol("tom1");
-        scenes[SceneType.start.ordinal()] = tom1;
+        tom1.setDescription("Meet Tom");
+        tom1.setMapSymbol("MT");
+        scenes[SceneType.tom1.ordinal()] = tom1;
         
         Scene tom2 = new Scene();
-        tom2.setDescription("lorem");
-        tom2.setMapSymbol("tom2");
-        scenes[SceneType.start.ordinal()] = tom2;
+        tom2.setDescription("Talk Tom");
+        tom2.setMapSymbol("TT");
+        scenes[SceneType.tom2.ordinal()] = tom2;
         
         Scene tom3 = new Scene();
-        tom3.setDescription("lorem");
-        tom3.setMapSymbol("tom3");
-        scenes[SceneType.start.ordinal()] = tom3;
+        tom3.setDescription("Help Tom");
+        tom3.setMapSymbol("HT");
+        scenes[SceneType.tom3.ordinal()] = tom3;
         
         Scene ethel1 = new Scene();
-        ethel1.setDescription("Meet ");
-        ethel1.setMapSymbol("ethel1");
-        scenes[SceneType.start.ordinal()] = ethel1;
+        ethel1.setDescription("Meet Ethel");
+        ethel1.setMapSymbol("ME");
+        scenes[SceneType.ethel1.ordinal()] = ethel1;
         
         Scene ethel2 = new Scene();
-        ethel2.setDescription("lorem");
-        ethel2.setMapSymbol("ethel2");
-        scenes[SceneType.start.ordinal()] = ethel2;
+        ethel2.setDescription("Talk Ethel");
+        ethel2.setMapSymbol("TE");
+        scenes[SceneType.ethel2.ordinal()] = ethel2;
         
         Scene ethel3 = new Scene();
-        ethel3.setDescription("lorem");
-        ethel3.setMapSymbol("ethel3");
-        scenes[SceneType.start.ordinal()] = ethel3;
+        ethel3.setDescription("Help Ethel");
+        ethel3.setMapSymbol("HE");
+        scenes[SceneType.ethel3.ordinal()] = ethel3;
         
         Scene jamm1 = new Scene();
-        jamm1.setDescription("Meet ");
-        jamm1.setMapSymbol("jamm1");
-        scenes[SceneType.start.ordinal()] = jamm1;
+        jamm1.setDescription("Meet Jamm");
+        jamm1.setMapSymbol("MJ");
+        scenes[SceneType.jamm1.ordinal()] = jamm1;
         
         Scene jamm2 = new Scene();
-        jamm2.setDescription("lorem");
-        jamm2.setMapSymbol("jamm2");
-        scenes[SceneType.start.ordinal()] = jamm2;
+        jamm2.setDescription("Talk Jamm");
+        jamm2.setMapSymbol("TJ");
+        scenes[SceneType.jamm2.ordinal()] = jamm2;
         
         Scene jamm3 = new Scene();
-        jamm3.setDescription("lorem");
-        jamm3.setMapSymbol("jamm3");
-        scenes[SceneType.start.ordinal()] = jamm3;
+        jamm3.setDescription("Help Jamm");
+        jamm3.setMapSymbol("HJ");
+        scenes[SceneType.jamm3.ordinal()] = jamm3;
         
         Scene anne1 = new Scene();
-        anne1.setDescription("Meet ");
-        anne1.setMapSymbol("anne1");
-        scenes[SceneType.start.ordinal()] = anne1;
+        anne1.setDescription("Meet Anne");
+        anne1.setMapSymbol("MN");
+        scenes[SceneType.anne1.ordinal()] = anne1;
         
         Scene anne2 = new Scene();
-        anne2.setDescription("lorem");
-        anne2.setMapSymbol("anne2");
-        scenes[SceneType.start.ordinal()] = anne2;
+        anne2.setDescription("Talk Anne");
+        anne2.setMapSymbol("TN");
+        scenes[SceneType.anne2.ordinal()] = anne2;
         
         Scene anne3 = new Scene();
-        anne3.setDescription("lorem");
-        anne3.setMapSymbol("anne3");
-        scenes[SceneType.start.ordinal()] = anne3;      
-       */ 
-        return scenes;
+        anne3.setDescription("Help Anne");
+        anne3.setMapSymbol("HN");
+        scenes[SceneType.anne3.ordinal()] = anne3;      
+      
+        return scenes;dhg
     }
     
     public static void movePlayerToStartingLocation(Map map) {

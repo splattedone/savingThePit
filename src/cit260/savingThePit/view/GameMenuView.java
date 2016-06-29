@@ -31,6 +31,8 @@ public class GameMenuView extends View{
                   + "\n| Game Menu                  |"
                   + "\n------------------------------"
                   + "\nM - Display Map "
+                  + "\nV - Display Visited"
+                  + "\nU - Display Unvisited"
                   + "\nI - View Inventory"
                   + "\nL - Move to new location"
                   + "\nQ - Quit"
@@ -45,6 +47,12 @@ public class GameMenuView extends View{
             case "M":
                 this.showMap();
                 System.out.println("\nDisplay Map");
+                break;
+            case "V":
+                displayVisited(true);
+                break;
+            case "U":
+                displayVisited(false);
                 break;
             case "I":
                 this.showInventory();
@@ -64,7 +72,9 @@ public class GameMenuView extends View{
         InventoryMenuView inventoryMenu = new InventoryMenuView(); 
         inventoryMenu.display();
     }
-    
+    private void displayVisited(boolean showVisited){
+        
+    }
     private void showMap() {
         String leftIndicator;
         String rightIndicator;
