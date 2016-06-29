@@ -154,7 +154,7 @@ public class MapControl {
         anne3.setMapSymbol("HN");
         scenes[SceneType.anne3.ordinal()] = anne3;      
       
-        return scenes;dhg
+        return scenes;
     }
     
     public static void movePlayerToStartingLocation(Map map) {
