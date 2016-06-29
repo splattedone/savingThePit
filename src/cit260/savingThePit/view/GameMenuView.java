@@ -72,8 +72,31 @@ public class GameMenuView extends View{
         InventoryMenuView inventoryMenu = new InventoryMenuView(); 
         inventoryMenu.display();
     }
+    
     private void displayVisited(boolean showVisited){
-        
+        Game game = SavingThePit.getCurrentGame(); // retreive the game
+        Map map = game.getMap(); // retreive the map from game
+        Location[][] locations = map.getLocations(); // retreive the locations from map
+        int visitedCounter = 0;
+        int notVisitedCounter = 0;
+         for( int row = 0; row < locations.length; row++){
+           for( int column = 0; column < locations[row].length; column++){
+               if(locations[row][column].isVisited()){
+                   visitedCounter++;
+               } else {
+                   notVisitedCounter++;
+               }
+           } 
+        } 
+        double percent = 0;
+            
+         if (showVisited)
+         {
+             percent = getPercentage(visitedCounter, visitedCounter+notVisitedCounter);
+             System.out.println("You have visited " + visitedCounter + " which is " + percent + "%.");
+         }
+         else 
+             System.out.println("You have not visited " + notVisitedCounter + " which is " + percent + "%.");
     }
     private void showMap() {
         String leftIndicator;

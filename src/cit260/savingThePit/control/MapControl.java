@@ -158,7 +158,7 @@ public class MapControl {
     }
     
     public static void movePlayerToStartingLocation(Map map) {
-        movePlayer(map, 2, 2);
+        /*movePlayer(map, 2, 2);*/
         movePlayer(map, 0, 0);
     }
 
@@ -230,5 +230,14 @@ public class MapControl {
        // locations[2][7].setScene(scenes[SceneType.blank1.ordinal()]);
        // locations[2][8].setScene(scenes[SceneType.bl.ordinal()]);
         
+    }
+    
+    public static double getPercentage(int amount, int totalAmount) {
+        int answer;
+        int percentage;
+                answer = amount / totalAmount;
+                percentage = answer * 100;
+              
+                return percentage;
     }
 }
