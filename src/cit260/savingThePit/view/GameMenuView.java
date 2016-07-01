@@ -7,7 +7,10 @@ package cit260.savingThePit.view;
 
 import cit260.savingThePit.control.GameControl;
 import static cit260.savingThePit.control.GameControl.createNewGame;
+import cit260.savingThePit.control.InventoryControl;
+import static cit260.savingThePit.control.MapControl.getPercentage;
 import cit260.savingThePit.model.Game;
+import cit260.savingThePit.model.InventoryItem;
 import cit260.savingThePit.model.Location;
 import cit260.savingThePit.model.Map;
 import cit260.savingThePit.model.Player;
@@ -34,6 +37,7 @@ public class GameMenuView extends View{
                   + "\nV - Display Visited"
                   + "\nU - Display Unvisited"
                   + "\nI - View Inventory"
+                  + "\nC - Count Inventory"
                   + "\nL - Move to new location"
                   + "\nQ - Quit"
                   + "\n------------------------------");
@@ -57,6 +61,9 @@ public class GameMenuView extends View{
             case "I":
                 this.showInventory();
                 break;
+            case "C":
+                this.countInventory();
+                break;    
             case "L":
                 this.showInventory();
                 break; 
@@ -137,22 +144,10 @@ public class GameMenuView extends View{
         }
             System.out.println("Your current location is " + map.getCurrentLocation().getScene().getDescription());
   }
-    /*
-    public static void countVisited (Map map, Location[][] locations){
-        int x = 0;
-        int y = 0;
-        if (x == 0 && y < 9; y++){
-            if (map.getCurrentLocation == true){
-                System.out.println("You have been to " + x +","+ y +".");
-            } else {
-                System.out.println("You not have been to " + x +","+ y +".");
-            }
-            
-            
-        }
-        
-        
-    }
-    */
+   
+  public void countInventory(){
+      InventoryItem[] inventory = Game.getInventory();
+      InventoryControl.countInventory(inventory);
+  }
     
 }
