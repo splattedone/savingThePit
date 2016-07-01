@@ -33,7 +33,7 @@ public class GameMenuView extends View{
                   + "\n------------------------------"
                   + "\n| Game Menu                  |"
                   + "\n------------------------------"
-                  + "\nM - Display Map "
+                  + "\nM - Display Map"
                   + "\nV - Display Visited"
                   + "\nU - Display Unvisited"
                   + "\nI - View Inventory"
@@ -46,32 +46,37 @@ public class GameMenuView extends View{
     public boolean doAction(String value) {
         
         value = value.toUpperCase(); //Convert choice to uppercase
-        
-        switch (value) {
-            case "M":
-                this.showMap();
-                System.out.println("\nDisplay Map");
-                break;
-            case "V":
-                displayVisited(true);
-                break;
-            case "U":
-                displayVisited(false);
-                break;
-            case "I":
-                this.showInventory();
-                break;
-            case "C":
-                this.countInventory();
-                break;    
-            case "L":
-                this.showInventory();
-                break; 
-            default:
-                System.out.println("\n*** Invalid selection *** Try Again");
-                break;
-        }
-        
+        try {
+            switch (value) {
+                case "M":
+                    this.showMap();
+                    System.out.println("\nDisplay Map");
+                    break;
+                case "V":
+                    displayVisited(true);
+                    break;
+                case "U":
+                        displayVisited(false); 
+                    break;
+                case "I":
+                    this.showInventory();
+                    break;
+                /*case "C":
+                    this.countInventory();
+                    break;    */
+                case "L":
+                    this.showInventory();
+                    break; 
+                case "X":
+                    this.getDoubleNumber();
+                    break;
+                default:
+                    System.out.println("\n*** Invalid selection *** Try Again");
+                    break;
+            }
+        }catch (MapControlException me) {
+            System.out.println(me.getMessage());
+        }   
         return false;
     }
 
@@ -80,7 +85,7 @@ public class GameMenuView extends View{
         inventoryMenu.display();
     }
     
-    private void displayVisited(boolean showVisited){
+    private void displayVisited(boolean showVisited) throws MapControlException {
         Game game = SavingThePit.getCurrentGame(); // retreive the game
         Map map = game.getMap(); // retreive the map from game
         Location[][] locations = map.getLocations(); // retreive the locations from map
@@ -97,13 +102,17 @@ public class GameMenuView extends View{
         } 
         double percent = 0;
             
-         if (showVisited)
-         {
-             percent = getPercentage(visitedCounter, visitedCounter+notVisitedCounter);
-             System.out.println("You have visited " + visitedCounter + " which is " + percent + "%.");
-         }
+         if (showVisited){
+             try {
+                percent = getPercentage(visitedCounter, visitedCounter+notVisitedCounter);
+             } catch (MapControlException me) {
+                 System.out.println(me.getMessage());
+             }
+             System.out.println("You have visited " + visitedCounter + " which is " 
+                        + percent + "%.");
+            }
          else 
-             System.out.println("You have not visited " + notVisitedCounter + " which is " + percent + "%.");
+             System.out.println("You have not visited " + notVisitedCounter + " which is                                " + percent + "%.");
     }
     private void showMap() {
         String leftIndicator;
@@ -144,10 +153,28 @@ public class GameMenuView extends View{
         }
             System.out.println("Your current location is " + map.getCurrentLocation().getScene().getDescription());
   }
-   
+    
+    public double getDoubleNumber() {
+        Double number = null;
+        while (number == null){
+            String value = this.getInput();
+            value = value.trim().toUpperCase();
+            
+            if (value.equals("Q"))
+                break;
+            try {
+            number = Double.parseDouble(value);
+            } catch (NumberFormatException nf){
+                System.out.println("You need a valid number.");
+            }
+        }   
+        return number;
+    }
+   /*
   public void countInventory(){
       InventoryItem[] inventory = Game.getInventory();
       InventoryControl.countInventory(inventory);
   }
-    
+    */
+
 }

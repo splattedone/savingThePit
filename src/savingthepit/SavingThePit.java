@@ -41,7 +41,13 @@ public class SavingThePit {
        
         // create StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
+        try {
         startProgramView.displayStartProgramView();
+        } catch (Throwable te){
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.displayStartProgramView();
+        }
    
     }
     

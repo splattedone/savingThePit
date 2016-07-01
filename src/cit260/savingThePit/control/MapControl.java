@@ -232,12 +232,14 @@ public class MapControl {
         
     }
     
-    public static double getPercentage(int amount, int totalAmount) {
-        int answer;
-        int percentage;
-                answer = amount / totalAmount;
-                percentage = answer * 100;
-              
-                return percentage;
+    public static void getPercentage(int amount, int totalAmount) throws MapControlException {
+       int answer; 
+       int percentage;
+            if( amount < 0 || totalAmount < 0){
+                throw new MapControlException("Cannot generate a percentage with"
+                                            + "negative values involved. Try again.");
+            }
+            answer = amount / totalAmount;
+            percentage = answer * 100;
     }
 }
