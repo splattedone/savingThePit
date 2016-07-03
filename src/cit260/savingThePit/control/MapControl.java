@@ -5,6 +5,7 @@
  */
 package cit260.savingThePit.control;
 
+import cit260.savingThePit.exceptions.MapControlException;
 import cit260.savingThePit.model.Location;
 import cit260.savingThePit.model.Map;
 import cit260.savingThePit.model.Scene;

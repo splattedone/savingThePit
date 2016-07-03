@@ -9,6 +9,7 @@ import cit260.savingThePit.control.GameControl;
 import static cit260.savingThePit.control.GameControl.createNewGame;
 import cit260.savingThePit.control.InventoryControl;
 import static cit260.savingThePit.control.MapControl.getPercentage;
+import cit260.savingThePit.exceptions.MapControlException;
 import cit260.savingThePit.model.Game;
 import cit260.savingThePit.model.InventoryItem;
 import cit260.savingThePit.model.Location;
