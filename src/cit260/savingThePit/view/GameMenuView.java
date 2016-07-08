@@ -8,6 +8,7 @@ package cit260.savingThePit.view;
 import cit260.savingThePit.control.GameControl;
 import static cit260.savingThePit.control.GameControl.createNewGame;
 import cit260.savingThePit.control.InventoryControl;
+import cit260.savingThePit.control.MapControl;
 import static cit260.savingThePit.control.MapControl.getPercentage;
 import cit260.savingThePit.exceptions.MapControlException;
 import cit260.savingThePit.model.Game;
@@ -40,6 +41,7 @@ public class GameMenuView extends View{
                   + "\nI - View Inventory"
                   + "\nC - Count Inventory"
                   + "\nL - Move to new location"
+                  + "\nW - Visit Character"
                   + "\nQ - Quit"
                   + "\n------------------------------");
     }    
@@ -66,10 +68,13 @@ public class GameMenuView extends View{
                     this.countInventory();
                     break;    */
                 case "L":
-                    this.showInventory();
+                    this.moveLocation();
                     break; 
                 case "X":
                     this.getDoubleNumber();
+                    break;
+                case "W":
+                    this.visitCharacter();
                     break;
                 default:
                     System.out.println("\n*** Invalid selection *** Try Again");
@@ -85,7 +90,29 @@ public class GameMenuView extends View{
         InventoryMenuView inventoryMenu = new InventoryMenuView(); 
         inventoryMenu.display();
     }
-    
+    private void moveLocation() {
+        this.showMap();
+        Game game = SavingThePit.getCurrentGame();
+        Map map = game.getMap();
+        System.out.println("Enter Row:");
+        Scanner in = new Scanner (System.in);
+        int row = in.nextInt();
+        System.out.println("Enter Column:");
+        int column = in.nextInt();
+        MapControl.movePlayer(map, row, column);
+        if (map.getCurrentLocation().getScene() != null)
+            this.visitCharacter(map.getCurrentLocation().getScene().getMapSymbol());
+        else
+            this.showMap();
+    }
+    private void visitCharacter(String ch) {
+        MapView mapView = new MapView();
+        mapView.visitLocation(ch);
+    }
+    private void visitCharacter() {
+        MapView mapView = new MapView();
+        mapView.display();
+    }
     private void displayVisited(boolean showVisited) throws MapControlException {
         Game game = SavingThePit.getCurrentGame(); // retreive the game
         Map map = game.getMap(); // retreive the map from game
@@ -106,11 +133,11 @@ public class GameMenuView extends View{
          if (showVisited){
              try {
                 percent = getPercentage(visitedCounter, visitedCounter+notVisitedCounter);
+                System.out.println("You have visited " + visitedCounter + " which is " 
+                        + percent + "%.");
              } catch (MapControlException me) {
                  System.out.println(me.getMessage());
-             }
-             System.out.println("You have visited " + visitedCounter + " which is " 
-                        + percent + "%.");
+             } 
             }
          else 
              System.out.println("You have not visited " + notVisitedCounter + " which is                                " + percent + "%.");
@@ -130,23 +157,23 @@ public class GameMenuView extends View{
           System.out.println();
           for( int row = 0; row < locations.length; row++){
             System.out.print(row + " "); // print row numbers to side of map
-            for( int column = 0; column < locations[row].length; column++){
-              leftIndicator = " ";
-              rightIndicator = " ";
-              if(locations[row][column] == map.getCurrentLocation()){
-                leftIndicator = "*"; // can be stars or whatever these are indicators showing visited
-                rightIndicator = "*"; // same as above
-              } 
-              else if(locations[row][column].isVisited()){
-                 leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
-                 rightIndicator = "<"; // same as above
+              for (Location location : locations[row]) {
+                  leftIndicator = " ";
+                  rightIndicator = " ";
+                  if (location == map.getCurrentLocation()) {
+                      leftIndicator = "*"; // can be stars or whatever these are indicators showing visited
+                      rightIndicator = "*"; // same as above
+                  } else if (location.isVisited()) {
+                      leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
+                      rightIndicator = "<"; // same as above
+                  }
+                  System.out.print("|"); // start map with a |
+                  if (location.getScene() == null) {
+                      System.out.print(leftIndicator + "??" + rightIndicator);
+                  } else {
+                      System.out.print(leftIndicator + location.getScene().getMapSymbol() + rightIndicator);
+                  }
               }
-              System.out.print("|"); // start map with a |
-              if(locations[row][column].getScene() == null)
-                System.out.print(leftIndicator + "??" + rightIndicator);
-              else
-                System.out.print(leftIndicator + locations[row][column].getScene().getMapSymbol() + rightIndicator);
-            }
             System.out.println("|");
           }
         }catch (Exception e) {

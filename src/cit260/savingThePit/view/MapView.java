@@ -6,7 +6,11 @@
 package cit260.savingThePit.view;
 
 import cit260.savingThePit.control.GameControl;
+import cit260.savingThePit.control.UtilitiesControl;
+import cit260.savingThePit.exceptions.UtilitiesControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import savingthepit.SavingThePit;
 
 /**
@@ -65,7 +69,7 @@ public class MapView extends View{
                 System.out.println("\nItem Help:");
                 break;
             case "E": //Go Visit Ethel
-                System.out.println("\nBribe Help:");
+                this.ethelView();
                 break;                
             case "S": // Save Game
                 this.saveGame();
@@ -77,7 +81,16 @@ public class MapView extends View{
         
         return false;
     }
-    
+    public void visitLocation(String loc){
+        switch(loc){
+            case "ME":
+                ethelView();
+                break;
+            default:
+                System.out.println("nothing to do at " + loc);           
+        } 
+               
+    }
     private void saveGame() {
         System.out.println("*** saveGame function called ***");
     }
@@ -111,7 +124,19 @@ public class MapView extends View{
         System.out.println("*** jammView method called ***");
     }
     private void ethelView() {
-        System.out.println("*** ethelView method called ***");
+        System.out.println("how big is your hole? Enter the depth of the hole:");
+        Scanner in = new Scanner (System.in);
+        int depth = in.nextInt();
+        System.out.println("how wide is the hole? Enter the radius of the hole:");
+        int radius = in.nextInt();
+        double vol;
+        try {
+            vol = UtilitiesControl.calcAmountOfDirtEthel(depth, radius);
+            System.out.println("You will need " + vol + " of dirt");
+        } catch (UtilitiesControlException ex) {
+            System.out.println(ex.toString());
+        }
+        
     }
        /*
         public void displayMapView() {

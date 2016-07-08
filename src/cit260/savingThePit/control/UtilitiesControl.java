@@ -5,6 +5,8 @@
  */
 package cit260.savingThePit.control;
 
+import cit260.savingThePit.exceptions.UtilitiesControlException;
+
 /**
  *
  * @author Appel & Ellis
@@ -23,7 +25,7 @@ public class UtilitiesControl {
          return answer;
         }
         
-        if (angle < 10) {
+        if (angle <= 0) {
             answer = -2;
             //Error Code 2 : "That's too low! You're throwing like Jerry";
             return answer;
@@ -126,13 +128,13 @@ public class UtilitiesControl {
         return answer;
     }
     
-    public double calcAmountOfDirtEthel(int height, int radius){
+    public static double calcAmountOfDirtEthel(int height, int radius) throws UtilitiesControlException{
         if (height < 10 || height > 25) {
-            return -1;
+            throw new UtilitiesControlException("Height should be between 10 and 25");
         }
         
         if (radius < 25 || radius > 90) {
-            return -2;
+            throw new UtilitiesControlException("Radius should be between 25 and 90");
         }
     
         double volume = Math.PI * Math.pow(radius, 2)* height; 
