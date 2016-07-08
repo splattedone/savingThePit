@@ -140,7 +140,7 @@ public class GameMenuView extends View{
              } 
             }
          else 
-             System.out.println("You have not visited " + notVisitedCounter + " which is                                " + percent + "%.");
+             System.out.println("You have not visited " + notVisitedCounter + " which is" + percent + "%.");
     }
     private void showMap() {
         String leftIndicator;

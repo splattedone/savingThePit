@@ -9,12 +9,13 @@ import cit260.savingThePit.control.InventoryControl;
 import cit260.savingThePit.control.UtilitiesControl;
 import java.util.Scanner;
 
+
 /**
  *
  * @author Appel
  *
  */
-public class CharacterView {
+public class CharacterView extends View {
     private String howHard;
     private String actionMenu = "\nM - Make a funny face." 
                                 +"\nW - Walk Away" 
@@ -57,7 +58,7 @@ private String getActionOption(){
             value = value.trim(); // trim off leading and trailing blanks 
             
             if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
+                this.console.println("\nInvalid value: value can not be blank");
                 continue;
             }
             

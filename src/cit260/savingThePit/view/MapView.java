@@ -138,44 +138,6 @@ public class MapView extends View{
         }
         
     }
-       /*
-        public void displayMapView() {
-        
-        boolean done = false;
-        do {
-            // prompt for and get players name
-            String mapOption = this.getMapOption();
-            if (mapOption.toUpperCase().equals("Q")) // user wants to quit
-                return; // exit the game
-            
-            // do the requested action and display the next view
-            done = this.doAction(mapOption);
-            
-        } while (!done);
-    }
-        private String getMapOption() {
-        
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println(this.menu);
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks 
-            
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break; // end the loop
-        }
-        return value;
-    }    
-    */ 
 
     
 }

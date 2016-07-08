@@ -42,7 +42,7 @@ public class MainMenuView extends View{
                 this.startNewGame();
                 break;
             case "R": // create and start a new game
-                this.resumeGame();
+                this.startSavedGame();
                 break; 
             case "G": // get and start existing game
                 this.gameplayMenu();
@@ -57,7 +57,7 @@ public class MainMenuView extends View{
                 this.saveGame();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                ErrorView.display("MainMenuView", "*** Invalid Selection *** Try again!");
                 break;
         }
         
@@ -72,8 +72,22 @@ public class MainMenuView extends View{
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
-    private void resumeGame() {
-        System.out.println("*** resumeGame function called ***");
+    private void startSavedGame() {
+        this.console.println("\n\nEnter the fule path for file where the game "
+                            + "is to be saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            //start a saved game
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        //display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
     private void gameplayMenu() {
         System.out.println("*** gameplayMenu function called ***");
@@ -82,7 +96,17 @@ public class MainMenuView extends View{
         System.out.println("*** displayBribeHelp function called ***");
     }
     private void saveGame() {
-        System.out.println("*** saveGame function called ***");
+        // prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the file path for file where the game "
+                            +"is to be saved");
+        String filePath = this.getInput();
+        
+        try {
+            // save the game to the specified file
+            GameControl.saveGame(SavingThePit.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("mainMenuView", ex.getMessage());
+        }
     }
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();

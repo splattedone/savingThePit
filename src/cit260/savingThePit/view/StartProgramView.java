@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author bethanyellis
  */
-public class StartProgramView {
+public class StartProgramView extends View {
     
     private String promptMessage;
    
@@ -79,7 +79,7 @@ public class StartProgramView {
         boolean valid = false; // initialize to not valid
         
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
+            this.console.println("\n" + this.promptMessage);
             
             value = keyboard.nextLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading and trailing blanks 
